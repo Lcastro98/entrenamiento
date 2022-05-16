@@ -11,7 +11,7 @@ public class AgregarMentoriaUseCase  extends UseCase<RequestCommand<AgregarMento
     public void executeUseCase(RequestCommand<AgregarMentoria> agregarMentoriaRequestCommand) {
         var command = agregarMentoriaRequestCommand.getCommand();
         var curso = Curso.from(
-                command.getCoursoId(), repository().getEventsBy(command.getCoursoId().value())
+                command.getCursoId(), repository().getEventsBy(command.getCursoId().value())
         );
         curso.agregarMentoria(command.getNombre(), command.getFecha());
 

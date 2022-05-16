@@ -22,7 +22,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 
@@ -48,7 +47,7 @@ class AgregarMentoriaUseCaseTest {
         //act
 
         var events = UseCaseHandler.getInstance()
-                .setIdentifyExecutor(command.getCoursoId().value())
+                .setIdentifyExecutor(command.getCursoId().value())
                 .syncExecutor(useCase, new RequestCommand<>(command))
                 .orElseThrow()
                 .getDomainEvents();
