@@ -25,7 +25,7 @@ public class CursoEventChange extends EventChange {
         });
 
         apply((DirectrizAgregadaAMentoria event) -> {
-            curso.mentorias.get(event.getMentoriaId()).agregarDirectiz(event.getDirectiz());
+            curso.mentorias.get(event.getMentoriaId()).agregarDirectriz(event.getDirectriz());
         });
     }
 }

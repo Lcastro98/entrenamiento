@@ -6,19 +6,19 @@ import co.com.sofkau.entrenamiento.curso.values.Fecha;
 import co.com.sofkau.entrenamiento.curso.values.Nombre;
 
 public class AgregarMentoria extends Command {
-    private final CursoId coursoId;
+    private final CursoId cursoId;
     private final Nombre nombre;
     private final Fecha fecha;
 
-    public AgregarMentoria(CursoId coursoId, Nombre nombre, Fecha fecha) {
-        this.coursoId = coursoId;
+    public AgregarMentoria(CursoId cursoId, Nombre nombre, Fecha fecha) {
+        this.cursoId = cursoId;
         this.nombre = nombre;
         this.fecha = fecha;
     }
 
 
-    public CursoId getCoursoId() {
-        return coursoId;
+    public CursoId getCursoId() {
+        return cursoId;
     }
 
     public Nombre getNombre() {
