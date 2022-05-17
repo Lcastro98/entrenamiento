@@ -22,7 +22,7 @@ public class Mentoria extends Entity<MentoriaId> {
         this.directices = new HashSet<>();
     }
 
-    public void agregarDirectriz(Directriz directriz){
+    public void agregarDirectriz(Directriz directriz) {
         //TODO: validaciones
         this.directices.add(directriz);
     }

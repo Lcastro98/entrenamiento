@@ -13,6 +13,6 @@ public class Directriz implements ValueObject<String> {
 
     @Override
     public String value() {
-        return null;
+        return value;
     }
 }

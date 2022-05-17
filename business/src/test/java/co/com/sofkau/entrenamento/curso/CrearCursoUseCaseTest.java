@@ -19,17 +19,17 @@ class CrearCursoUseCaseTest {
     private CrearCursoUseCase useCase;
 
     @BeforeEach
-    public void setup(){
+    public void setup() {
         useCase = new CrearCursoUseCase();
     }
 
     @Test
-    public void crearCursoHappyPass(){
+    public void crearCursoHappyPass() {
         //arrange
         CursoId coursoId = CursoId.of("xxxxx");
         Nombre nombre = new Nombre("DDD");
         Descripcion descripcion = new Descripcion("Curso complementario para el training");
-        var command = new CrearCurso( coursoId,  nombre,  descripcion);
+        var command = new CrearCurso(coursoId, nombre, descripcion);
 
         //act
         var events = UseCaseHandler.getInstance()
@@ -38,7 +38,7 @@ class CrearCursoUseCaseTest {
                 .getDomainEvents();
 
         //asserts
-        var cursoCreado = (CursoCreado)events.get(0);
+        var cursoCreado = (CursoCreado) events.get(0);
         Assertions.assertEquals("xxxxx", cursoCreado.aggregateRootId());
         Assertions.assertEquals("DDD", cursoCreado.getNombre().value());
         Assertions.assertEquals("Curso complementario para el training", cursoCreado.getDescripcion().value());

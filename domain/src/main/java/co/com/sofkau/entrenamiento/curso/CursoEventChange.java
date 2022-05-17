@@ -10,7 +10,7 @@ import java.util.HashSet;
 
 public class CursoEventChange extends EventChange {
     public CursoEventChange(Curso curso) {
-        apply((CursoCreado event) ->{
+        apply((CursoCreado event) -> {
             curso.nombre = event.getNombre();
             curso.descripcion = event.getDescripcion();
             curso.contenidos = new HashSet<>();

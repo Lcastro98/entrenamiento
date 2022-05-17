@@ -25,24 +25,24 @@ public class Curso extends AggregateEvent<CursoId> {
         subscribe(new CursoEventChange(this));
     }
 
-    private Curso(CursoId entityId){
+    private Curso(CursoId entityId) {
         super(entityId);
         subscribe(new CursoEventChange(this));
     }
 
 
-    public static Curso from(CursoId entityId, List<DomainEvent> events){
+    public static Curso from(CursoId entityId, List<DomainEvent> events) {
         var curso = new Curso(entityId);
         events.forEach(curso::applyEvent);
         return curso;
     }
 
-    public void agregarMentoria( Nombre nombre, Fecha fecha){
-        var mentoriaId = new MentoriaId();
+    public void agregarMentoria(Nombre nombre, Fecha fecha) {
+        var mentoriaId = new MentoriaId("aaaa");
         appendChange(new MentoriaCreada(mentoriaId, nombre, fecha)).apply();
     }
 
-    public void agregarDirectrizDeMentoria(MentoriaId mentoriaId, Directriz directriz){
+    public void agregarDirectrizDeMentoria(MentoriaId mentoriaId, Directriz directriz) {
         appendChange(new DirectrizAgregadaAMentoria(mentoriaId, directriz)).apply();
     }
 
@@ -50,11 +50,11 @@ public class Curso extends AggregateEvent<CursoId> {
         return nombre;
     }
 
-    public Descripcion descripcion(){
+    public Descripcion descripcion() {
         return descripcion;
     }
 
-    public Coach coach(){
+    public Coach coach() {
         return coach;
     }
 }

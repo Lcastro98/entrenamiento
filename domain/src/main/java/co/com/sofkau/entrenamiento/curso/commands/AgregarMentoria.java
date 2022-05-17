@@ -16,7 +16,6 @@ public class AgregarMentoria extends Command {
         this.fecha = fecha;
     }
 
-
     public CursoId getCursoId() {
         return cursoId;
     }
@@ -28,7 +27,6 @@ public class AgregarMentoria extends Command {
     public Fecha getFecha() {
         return fecha;
     }
-
 
 
 }

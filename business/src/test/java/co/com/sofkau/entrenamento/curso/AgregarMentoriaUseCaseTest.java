@@ -35,12 +35,12 @@ class AgregarMentoriaUseCaseTest {
     private DomainEventRepository repository;
 
     @Test
-    void agregarUnaMentoriaHappyPass(){
+    void agregarUnaMentoriaHappyPass() {
         //arrange
-        CursoId coursoId = CursoId.of("ddddd");
+        CursoId cursoId = CursoId.of("ddddd");
         Nombre nombre = new Nombre("Aprendiendo de casos de usos");
         Fecha fecha = new Fecha(LocalDateTime.now(), LocalDate.now());
-        var command = new AgregarMentoria( coursoId,  nombre,  fecha);
+        var command = new AgregarMentoria(cursoId, nombre, fecha);
 
         when(repository.getEventsBy("ddddd")).thenReturn(history());
         useCase.addRepository(repository);
@@ -53,7 +53,7 @@ class AgregarMentoriaUseCaseTest {
                 .getDomainEvents();
 
         //assert
-        var event = (MentoriaCreada)events.get(0);
+        var event = (MentoriaCreada) events.get(0);
         Assertions.assertEquals("Aprendiendo de casos de usos", event.getNombre().value());
 
     }
